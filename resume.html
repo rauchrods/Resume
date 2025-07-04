@@ -1,0 +1,832 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rauch Rodrigues - Resume</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, "Helvetica Neue", Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        line-height: 1.5;
+        color: #2d3748;
+        background-color: #f7fafc;
+        font-weight: 400;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      .resume-container {
+        max-width: 800px;
+        margin: 0 auto;
+        background: white;
+        padding: 18px;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+          0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        border-radius: 8px;
+      }
+      .header {
+        margin-bottom: 10px;
+        border-bottom: 2px solid #e2e8f0;
+        padding-bottom: 15px;
+      }
+      .name {
+        font-size: 32px;
+        font-weight: 700;
+        color: #1a202c;
+        letter-spacing: -0.025em;
+      }
+      .title {
+        font-size: 18px;
+        color: #3182ce;
+        font-weight: 500;
+      }
+      .contact-info {
+        font-size: 14px;
+        color: #4a5568;
+        line-height: 1.4;
+        font-weight: 400;
+      }
+      .profile-image {
+        width: 125px;
+        height: 125px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid #b0c4de;
+        box-shadow: 0 0 0 3px rgba(176, 196, 222, 0.25),
+          0 0 0 6px rgba(176, 196, 222, 0.15),
+          0 0 0 9px rgba(176, 196, 222, 0.08);
+      }
+      .main-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        margin-top: 10px;
+      }
+      .left-column {
+        padding-right: 12px;
+      }
+      .right-column {
+        padding-left: 12px;
+        border-left: 1px solid #e2e8f0;
+      }
+      .section {
+        margin-bottom: 25px;
+      }
+      .section-title {
+        font-size: 16px;
+        font-weight: 600;
+        text-transform: uppercase;
+        border-bottom: 2px solid #2d3748;
+        padding-bottom: 5px;
+        margin-bottom: 15px;
+        letter-spacing: 0.05em;
+      }
+      .job-title {
+        font-weight: 600;
+        font-size: 14px;
+        margin-bottom: 3px;
+        color: #1a202c;
+      }
+      .company {
+        color: #3182ce;
+        font-size: 13px;
+        margin-bottom: 3px;
+        font-weight: 500;
+      }
+      .job-details {
+        font-size: 12px;
+        color: #718096;
+        margin-bottom: 8px;
+        font-weight: 500;
+      }
+      .job-description {
+        font-size: 12px;
+        margin-left: 0;
+        margin-bottom: 15px;
+        padding-bottom: 15px;
+        border-bottom: 1px dotted #cbd5e0;
+        line-height: 1.5;
+      }
+      .job-description:last-child {
+        border-bottom: none;
+      }
+      .job-description ul {
+        margin: 5px 0;
+        padding-left: 20px;
+      }
+      .job-description li {
+        margin-bottom: 4px;
+      }
+      .skills-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 8px;
+        font-size: 12px;
+      }
+      .skill-item {
+        background: #f7fafc;
+        padding: 4px 8px;
+        border-radius: 4px;
+        text-align: center;
+        border: 1px solid #e2e8f0;
+        font-weight: 400;
+      }
+      .project-item {
+        margin-bottom: 15px;
+        padding-bottom: 15px;
+        border-bottom: 1px dotted #cbd5e0;
+      }
+      .project-item:last-child {
+        border-bottom: none;
+      }
+      .degree {
+        font-weight: 600;
+        font-size: 14px;
+        color: #1a202c;
+      }
+      .institution {
+        color: #3182ce;
+        font-size: 13px;
+        font-weight: 500;
+      }
+      .project-title {
+        font-weight: 600;
+        font-size: 14px;
+        margin-bottom: 3px;
+        color: #1a202c;
+        display: flex;
+        justify-content: space-between;
+      }
+      .project-title :nth-child(2) {
+        font-weight: 400;
+        font-size: 12px;
+        font-style: italic;
+        color: #5a6575;
+      }
+      .project-tech {
+        font-size: 12px;
+        color: #718096;
+        margin-bottom: 3px;
+
+        display: flex;
+        column-gap: 8px;
+        justify-content: space-between;
+      }
+      .project-description {
+        font-size: 12px;
+        line-height: 1.5;
+      }
+      .project-description ul {
+        margin: 5px 0;
+        padding-left: 20px;
+      }
+
+      .language-item {
+        margin-bottom: 5px;
+      }
+      .language-name {
+        font-weight: 600;
+        font-size: 14px;
+        color: #1a202c;
+        margin-bottom: 2px;
+      }
+      .language-proficiency {
+        font-size: 12px;
+        color: #718096;
+        font-style: italic;
+      }
+      .highlight {
+        color: #3182ce;
+        font-weight: 600;
+      }
+      strong {
+        font-weight: 600;
+        color: #2d3748;
+      }
+      a {
+        color: #3182ce;
+        text-decoration: none;
+        font-weight: 500;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      @media print {
+        body {
+          background: white;
+          font-size: 11px;
+        }
+        .resume-container {
+          box-shadow: none;
+          border-radius: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="resume-container">
+      <div class="header">
+        <div
+          style="
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          "
+        >
+          <div style="flex: 1">
+            <div class="name" style="margin-bottom: 1px">RAUCH RODRIGUES</div>
+            <div class="title" style="margin-bottom: 3px">
+              Full Stack Developer
+            </div>
+            <div class="contact-info" style="text-align: left; margin-top: 3px">
+              📞
+              <a
+                href="tel:+919820460532"
+                style="color: #3182ce; text-decoration: none"
+                >(+91) 9820460532</a
+              >
+              &nbsp;&nbsp; ✉️
+              <a
+                href="mailto:rauchrodrigues@gmail.com"
+                style="color: #3182ce; text-decoration: none"
+                >rauchrodrigues@gmail.com</a
+              >
+              <br />
+              🌐
+              <a
+                href="https://rauchrodrigues.in"
+                target="_blank"
+                style="color: #3182ce; text-decoration: none"
+                >https://rauchrodrigues.in</a
+              ><br />
+              📍 Mumbai/Dombivli, Maharashtra, (421202)<br />
+              <div style="margin-top: 5px">
+                <a
+                  href="https://www.linkedin.com/in/rauchrodrigues/"
+                  target="_blank"
+                  style="
+                    color: #3182ce;
+                    text-decoration: none;
+                    margin-right: 15px;
+                  "
+                  >💼 LinkedIn</a
+                >
+                <a
+                  href="https://github.com/rauchrods"
+                  target="_blank"
+                  style="
+                    color: #3182ce;
+                    text-decoration: none;
+                    margin-right: 15px;
+                  "
+                  >👨‍💻 GitHub</a
+                >
+                <a
+                  href="https://leetcode.com/u/rauchrods/"
+                  target="_blank"
+                  style="
+                    color: #3182ce;
+                    text-decoration: none;
+                    margin-right: 15px;
+                  "
+                  >🔢 LeetCode</a
+                >
+              </div>
+            </div>
+          </div>
+          <div style="margin-left: 20px">
+            <img
+              src="./mypic.png"
+              alt="Rauch Rodrigues"
+              class="profile-image"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="main-content">
+        <div class="left-column">
+          <div class="section">
+            <div class="section-title">SUMMARY</div>
+            <div style="font-size: 12px">
+              Accomplished <strong>Full Stack Developer</strong> with
+              <strong>2.5+ years</strong> of experience building scalable web
+              applications. Developed robust skills in
+              <strong>frontend technologies (React, React Native)</strong> and
+              <strong>backend technologies (Node.js, Spring Boot)</strong>.
+              Strong problem-solver with continuous drive to learn and adapt to
+              new frameworks and technologies. Currently working on
+              <strong>Learning Management System (LMS)</strong> platform serving
+              enterprise clients including <strong>SBI and HDFC</strong>.
+              Contributed significantly to optimizing frontend and backend
+              databases,
+              <strong>reducing unnecessary re-renders in frontend</strong> and
+              <strong>improving overall system performance</strong>.
+            </div>
+          </div>
+
+          <div class="section">
+            <div class="section-title">EXPERIENCE</div>
+
+            <div class="job-title">Full Stack Software Developer Engineer</div>
+            <div class="company">Bitkraft Technologies LLP</div>
+            <div class="job-details">
+              📅 04/2024 - Present &nbsp;&nbsp; 📍 Mumbai
+            </div>
+
+            <div class="job-description">
+              <ul>
+                <li>
+                  Engineered <strong>30+ React frontend components</strong>,
+                  custom fetch hooks, and
+                  <strong>responsive UI features</strong>, enhancing user
+                  experience and decreasing page load time by
+                  <strong>20%</strong>
+                  Implemented complex
+                  <strong>API encryption/decryption system</strong> from scratch
+                  for enhanced security
+                </li>
+
+                <li>
+                  Architected cross-platform
+                  <strong>React Native application</strong> with comprehensive
+                  <strong>Jest testing suite</strong>, maintaining
+                  <strong>75% code coverage</strong> for quality assurance
+                </li>
+                <li>
+                  Enhanced <strong>Spring Boot APIs</strong> with
+                  <strong>Docker containerization</strong> and implemented
+                  <strong>SSO login feature</strong> for SBI client on
+                  <strong>CRISIL LMS platform</strong>
+                </li>
+                <li>
+                  Optimized backend APIs using
+                  <strong>Express.js and MongoDB</strong>, achieving
+                  <strong>30% faster query response times</strong> and improved
+                  system performance
+                </li>
+              </ul>
+            </div>
+
+            <div class="job-title">Junior Software Developer Engineer</div>
+            <div class="company">STRIDE REAL ESTATE LLC</div>
+            <div class="job-details">
+              📅 05/2023 - 04/2024 &nbsp;&nbsp; 📍 Remote
+            </div>
+
+            <div class="job-description">
+              <ul>
+                <li>
+                  Developed responsive
+                  <strong>React frontend components</strong> including
+                  <strong
+                    >UI components, Home Page, Property Section, and Contact
+                    Page</strong
+                  >
+                  for property listings platform, contributing
+                  <strong>50+ pages of the frontend codebase</strong>
+                </li>
+                <li>
+                  Built cross-platform
+                  <strong>Flutter mobile application</strong> for
+                  <strong>iOS/Android platforms</strong>, implementing features
+                  such as
+                  <strong>Property Card/Details Section, Profile Section</strong
+                  >, and additional UI components with seamless user experience
+                </li>
+                <li>
+                  Integrated <strong>Spring Boot APIs</strong> with
+                  <strong>AWS services (EC2, S3 Bucket, Amplify)</strong> to
+                  enhance backend infrastructure, improve system scalability,
+                  and optimize cloud-based application deployment
+                </li>
+              </ul>
+            </div>
+
+            <div class="job-title">Graduate Engineer Trainee</div>
+            <div class="company">Reliance - JIO</div>
+            <div class="job-details">
+              📅 04/2022 - 07/2022 &nbsp;&nbsp; 📍 Mumbai
+            </div>
+
+            <div class="job-description">
+              <ul>
+                <li>
+                  Processed <strong>100+ tickets</strong> for SAP Material
+                  Management Module, sustaining
+                  <strong>98% resolution rate</strong> and shortening average
+                  resolution time by <strong>25%</strong>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="section">
+            <div class="section-title">EDUCATION</div>
+
+            <div class="education-item">
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: flex-start;
+                "
+              >
+                <div>
+                  <div class="degree">B.E in Mechanical Engineering</div>
+                  <div class="institution">
+                    Don Bosco Institute of Technology
+                  </div>
+                  <div class="job-details">
+                    📅 08/2016 - 10/2020 &nbsp;&nbsp; 📍 Mumbai
+                  </div>
+                </div>
+                <div style="text-align: right; font-size: 12px; color: #2d3748">
+                  <div style="font-weight: 600">CGPA: 7.61</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="education-item">
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: flex-start;
+                "
+              >
+                <div>
+                  <div class="degree">Class XII - Science</div>
+                  <div class="institution">Model College</div>
+                  <div class="job-details">
+                    📅 05/2016 - 05/2016 &nbsp;&nbsp; 📍 Mumbai
+                  </div>
+                </div>
+                <div style="text-align: right; font-size: 12px; color: #2d3748">
+                  <div style="font-weight: 600">68%</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="education-item">
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: flex-start;
+                "
+              >
+                <div>
+                  <div class="degree">Class X</div>
+                  <div class="institution">St. Therese Convent High School</div>
+                  <div class="job-details">
+                    📅 05/2014 - 05/2014 &nbsp;&nbsp; 📍 Mumbai
+                  </div>
+                </div>
+                <div style="text-align: right; font-size: 12px; color: #2d3748">
+                  <div style="font-weight: 600">88.4%</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="right-column">
+          <div class="section">
+            <div class="section-title">TECHNICAL SKILLS</div>
+            <table
+              style="width: 100%; font-size: 12px; border-collapse: collapse"
+            >
+              <tr>
+                <td
+                  style="
+                    font-weight: 600;
+                    padding: 4px 8px 4px 0;
+                    vertical-align: top;
+                    width: 25%;
+                  "
+                >
+                  Languages
+                </td>
+                <td style="padding: 4px 0; vertical-align: top">
+                  JavaScript, TypeScript, HTML5, CSS3, Java, Dart, SQL
+                </td>
+              </tr>
+              <tr>
+                <td
+                  style="
+                    font-weight: 600;
+                    padding: 4px 8px 4px 0;
+                    vertical-align: top;
+                    width: 25%;
+                  "
+                >
+                  Frameworks
+                </td>
+                <td style="padding: 4px 0; vertical-align: top">
+                  React.js, React Native, Express.js, Spring Boot, Node.js,
+                  Flutter
+                </td>
+              </tr>
+              <tr>
+                <td
+                  style="
+                    font-weight: 600;
+                    padding: 4px 8px 4px 0;
+                    vertical-align: top;
+                    width: 25%;
+                  "
+                >
+                  Databases
+                </td>
+                <td style="padding: 4px 0; vertical-align: top">
+                  MongoDB, MySQL, PostgreSQL
+                </td>
+              </tr>
+              <tr>
+                <td
+                  style="
+                    font-weight: 600;
+                    padding: 4px 8px 4px 0;
+                    vertical-align: top;
+                    width: 25%;
+                  "
+                >
+                  Tools
+                </td>
+                <td style="padding: 4px 0; vertical-align: top">
+                  Git, GitHub, GitLab, Docker, AWS (EC2, S3), REST APIs, Jest,
+                  Postman
+                </td>
+              </tr>
+              <tr>
+                <td
+                  style="
+                    font-weight: 600;
+                    padding: 4px 8px 4px 0;
+                    vertical-align: top;
+                    width: 25%;
+                  "
+                >
+                  Skills
+                </td>
+                <td style="padding: 4px 0; vertical-align: top">
+                  Full Stack Development, Cross-platform Development, Database
+                  Management, DSA (Array, LinkedList, Stack, Queue, Maps, Trees,
+                  Recursion)
+                </td>
+              </tr>
+            </table>
+          </div>
+
+          <div class="section">
+            <div class="section-title">PROJECTS</div>
+
+            <div class="project-item">
+              <div class="project-title">
+                <span>Apprise - Full Stack Social Media Platform</span>
+                <span>(MERN)</span>
+              </div>
+              <div class="project-tech">
+                <a
+                  href="https://github.com/rauchrods/Apprise-Social-Media"
+                  target="_blank"
+                  style="color: #3182ce; text-decoration: none"
+                  >🔗 GitHub Source Code</a
+                >
+                <a
+                  href="https://apprise.rauchrodrigues.in/login"
+                  target="_blank"
+                  style="color: #3182ce; text-decoration: none"
+                  >🌐 Live Demo</a
+                >
+              </div>
+
+              <div class="project-description">
+                <ul>
+                  <li>
+                    Constructed comprehensive social media platform for
+                    <strong>50+ registered users</strong>, featuring real-time
+                    posts, likes, comments, user follows, and profile management
+                  </li>
+                  <li>
+                    Executed
+                    <strong
+                      >MERN stack architecture with Cloudinary
+                      integration</strong
+                    >
+                    and deployed on Render, maintaining
+                    <strong>99.5% uptime</strong>
+                  </li>
+                  <li>
+                    Refined database queries and API responses, reducing load
+                    time by <strong>60%</strong> and strengthening user
+                    engagement
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="project-item">
+              <div class="project-title">Professional Portfolio Website</div>
+              <div class="project-tech">
+                <a
+                  href="https://github.com/rauchrods/My-Portfolio"
+                  target="_blank"
+                  style="color: #3182ce; text-decoration: none"
+                  >🔗 GitHub Source Code</a
+                >
+                <a
+                  href="https://rauchrodrigues.in/"
+                  target="_blank"
+                  style="color: #3182ce; text-decoration: none"
+                  >🌐 Live Demo</a
+                >
+              </div>
+
+              <div class="project-description">
+                <ul>
+                  <li>
+                    Created responsive portfolio website using React.js,
+                    showcasing <strong>10+ projects</strong> with dynamic
+                    content loading
+                  </li>
+                  <li>
+                    Applied modern design principles and mobile-first approach,
+                    attaining 85+ Lighthouse performance score
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="project-item">
+              <div class="project-title">
+                <span>Excel Clone Web Application </span>
+                <span>(Vanilla JavaScript)</span>
+              </div>
+              <div class="project-tech">
+                <a
+                  href="https://github.com/rauchrods/Excel-Clone"
+                  target="_blank"
+                  style="color: #3182ce; text-decoration: none"
+                  >🔗 GitHub Source Code</a
+                >
+                <a
+                  href="https://rauchrods.github.io/Excel-Clone/"
+                  target="_blank"
+                  style="color: #3182ce; text-decoration: none"
+                  >🌐 Live Demo</a
+                >
+              </div>
+
+              <div class="project-description">
+                <ul>
+                  <li>
+                    Produced feature-rich spreadsheet application with 2,600
+                    cells (100*26 grid), supporting text formatting, multiple
+                    sheets, and file operations
+                  </li>
+                  <li>
+                    Integrated local storage functionality and enhanced with
+                    real-time features, managing complex data persistence and
+                    user state management
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="project-item">
+              <div class="project-title">
+                <span>Kanban Task Management System</span>
+                <span>(Vanilla JavaScript)</span>
+              </div>
+              <div class="project-tech">
+                <a
+                  href="https://github.com/rauchrods/My-Jira-kanban-Task-Management-System"
+                  target="_blank"
+                  style="color: #3182ce; text-decoration: none"
+                  >🔗 GitHub Source Code</a
+                >
+                <a
+                  href="https://rauchrods.github.io/My-Jira-kanban-Task-Management-System/"
+                  target="_blank"
+                  style="color: #3182ce; text-decoration: none"
+                  >🌐 Live Demo</a
+                >
+              </div>
+
+              <div class="project-description">
+                <ul>
+                  <li>
+                    Established intuitive task management interface enabling
+                    drag-and-drop reorganization, search functionality, and CRUD
+                    operations
+                  </li>
+                  <li>
+                    Applied responsive design and local storage, ensuring
+                    seamless user experience across all devices
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="project-item">
+              <div class="project-title">
+                <span>Movie Ticket Booking System</span>
+                <span>(Spring Boot, MySQL)</span>
+              </div>
+              <div class="project-tech">
+                <a
+                  href="https://github.com/rauchrods/bookmyshowbackend"
+                  target="_blank"
+                  style="color: #3182ce; text-decoration: none"
+                  >🔗 GitHub Source Code</a
+                >
+              </div>
+
+              <div class="project-description">
+                <ul>
+                  <li>
+                    Constructed backend REST API system using Spring Boot and
+                    MySQL, executing MVC architecture with comprehensive booking
+                    functionality
+                  </li>
+                  <li>
+                    Streamlined ticket booking process for users, theaters,
+                    movies, and bookings with enhanced query performance
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- <div class="project-item">
+              <div class="project-title">Student Result Management System</div>
+              <div class="project-tech">
+                <a
+                  href="https://github.com/rauchrods/Student-data-and-results-database-management"
+                  target="_blank"
+                  style="color: #3182ce; text-decoration: none"
+                  >🔗 GitHub Source Code</a
+                >
+              </div>
+
+              <div class="project-description">
+                <ul>
+                  <li>
+                    Established desktop application with intuitive GUI for
+                    managing student data and academic records
+                  </li>
+                  <li>
+                    Executed secure database operations with real-time data
+                    updates and comprehensive reporting features
+                  </li>
+                </ul>
+              </div>
+            </div> -->
+
+            <div class="section">
+              <div class="section-title">LANGUAGES</div>
+              <div
+                style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px"
+              >
+                <div class="language-item">
+                  <div class="language-name">English</div>
+                  <div class="language-proficiency">
+                    Fluent/Professional Working Proficiency
+                  </div>
+                </div>
+                <div class="language-item">
+                  <div class="language-name">Hindi</div>
+                  <div class="language-proficiency">
+                    Fluent/Professional Working Proficiency
+                  </div>
+                </div>
+                <div class="language-item">
+                  <div class="language-name">Marathi</div>
+                  <div class="language-proficiency">
+                    Conversational/Intermediate
+                  </div>
+                </div>
+                <div class="language-item">
+                  <div class="language-name">Konkani</div>
+                  <div class="language-proficiency">Native Speaker</div>
+                </div>
+                <div class="language-item">
+                  <div class="language-name">German</div>
+                  <div class="language-proficiency">Basic/Beginner (A1)</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
